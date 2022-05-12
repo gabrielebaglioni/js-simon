@@ -26,8 +26,10 @@ function getnonrepetelistnumber(nElements, min, max){
 //---------------------------------
 //           MAIN
 //--------------------------------
-const numbers = !Number(getnonrepetelistnumber(2, 1, 10));
+const numbers = (getnonrepetelistnumber(2, 1, 10));
+alert(numbers);
 let randomNumber = [];
 randomNumber.push(numbers);
- console.log(randomNumber);
- alert(Number(randomNumber));
+console.log(randomNumber);
+
+
