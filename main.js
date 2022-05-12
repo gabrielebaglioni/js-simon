@@ -28,8 +28,25 @@ function getnonrepetelistnumber(nElements, min, max){
 //--------------------------------
 const numbers = (getnonrepetelistnumber(2, 1, 10));
 alert(numbers);
-let randomNumber = [];
-randomNumber.push(numbers);
-console.log(randomNumber);
+let controlloNgenerati = [];
+let nUtente;
+let controlloNutente = [];
+controlloNgenerati.push(numbers);
+// console.log(controlloNgenerati);
+// dopo 30 secondi 
+setTimeout(function() {
+   for (let i = 0; i < controlloNgenerati.length + 1; i++) {
+      let nUtente = Number(prompt("inserisci i numeri che hai visto in precedenza"));
+      controlloNutente.push(nUtente);
+      // console.log(controlloNutente);
+   }
+      if(controlloNgenerati.length === controlloNutente.length){
+         alert("HAI perso");
+      }else{
+         alert("HAI vinto");
+      }
+      
+   
+}, 3000);
 
 
