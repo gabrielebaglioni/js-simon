@@ -45,20 +45,36 @@ function isEqual()
 //--------------------------------
 const numbers = (getNonRepeteListNumber(2, 1, 10)); 
 alert(numbers);
-let numbersArray = [];
-let userNumber;
-let controlloNutente = [];
-let checkNumbers = [];
+let numbersArray = [];// popolato da getrNonRepete
+let userNumber;//pushati in controlloNutente
 numbersArray.push(numbers);
 // dopo 30 secondi 
 setTimeout(function() {
+   const controlloNutente = [];//popolato da userNumber push
    for (let i = 0; i < numbersArray.length + 1 ; i++) {
       let userNumber = Number(prompt("inserisci i numeri che hai visto in precedenza"));
       controlloNutente.push(userNumber);
   
-    }
-      // console.log("numbersArray", numbersArray);
-      // console.log("controlloNutente", controlloNutente);
+     }
+     const checkNumbers = [];//numeri indovinati
+     for(let i = 0; i < controlloNutente.length; i++){
+        const userNumber = controlloNutente[i];
+
+        if(numbersArray.includes(userNumber) && !checkNumbers.includes(userNumber)){
+           checkNumbers.push(userNumber);
+           console.log(userNumber)
+        }
+        
+     }
+      
+   }
+        
+    
+      
+   
+, 2000);
+//   console.log(controlloNutente);
+   //   console.log(numbersArray);
 
       // if(nubersArray.length == controlloNutente.length){
       //    alert("HAI perso");
@@ -70,15 +86,13 @@ setTimeout(function() {
    //   }else {
    // alert("HAI vinto");
    //  } 
-   for(let i=0;i < controlloNutente.length; i++){
-      if(numbersArray.includes(controlloNutente[i])){
+   // for(let i=0;i < controlloNutente.length; i++){
+   //    if(numbersArray.includes(controlloNutente[i])){
          
-      }
-   }
-        
-    
-      }
-   
-, 3000);
-
+   //    }
+    //    if (numbersArray.includes(controlloNutente)){
+   //        checkNumbers.push(controlloNutente)
+      
+   //    }
+   //    console.log(checkNumbers)
 
