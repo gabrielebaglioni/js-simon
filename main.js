@@ -12,7 +12,7 @@ function getrandomumber(min, max) {
 }
 
 
-function getnonrepetelistnumber(nElements, min, max){
+function getNonRepeteListNumber(nElements, min, max){
    let numbers = [];
    while(numbers.length < nElements){
       let numeroRipetuto = getrandomumber(min, max)
@@ -22,31 +22,63 @@ function getnonrepetelistnumber(nElements, min, max){
    }
    return numbers
 }
-
+function isEqual()
+  {
+   var a = [];
+   var b = [];
+    
+    // If length is not equal
+    if(a.length!=b.length)
+     return "False";
+    else
+    {
+     
+    // Comparing each element of array
+     for(var i=0;i<a.length;i++)
+     if(a[i]!=b[i])
+      return "False";
+      return "True";
+    }
+  }
 //---------------------------------
 //           MAIN
 //--------------------------------
-const numbers = (getnonrepetelistnumber(2, 1, 10));
+const numbers = (getNonRepeteListNumber(2, 1, 10)); 
 alert(numbers);
-let controlloNgenerati = [];
-let nUtente;
+let numbersArray = [];
+let userNumber;
 let controlloNutente = [];
-controlloNgenerati.push(numbers);
-// console.log(controlloNgenerati);
+let checkNumbers = [];
+numbersArray.push(numbers);
 // dopo 30 secondi 
 setTimeout(function() {
-   for (let i = 0; i < controlloNgenerati.length + 1; i++) {
-      let nUtente = Number(prompt("inserisci i numeri che hai visto in precedenza"));
-      controlloNutente.push(nUtente);
-      // console.log(controlloNutente);
-   }
-      if(controlloNgenerati.length === controlloNutente.length){
-         alert("HAI perso");
-      }else{
-         alert("HAI vinto");
+   for (let i = 0; i < numbersArray.length + 1 ; i++) {
+      let userNumber = Number(prompt("inserisci i numeri che hai visto in precedenza"));
+      controlloNutente.push(userNumber);
+  
+    }
+      // console.log("numbersArray", numbersArray);
+      // console.log("controlloNutente", controlloNutente);
+
+      // if(nubersArray.length == controlloNutente.length){
+      //    alert("HAI perso");
+      // }else{
+      //    alert("HAI vinto");
+      // }
+   //  if(!numbersArray[i].includes(controlloNutente)){
+   // alert("hai perso")
+   //   }else {
+   // alert("HAI vinto");
+   //  } 
+   for(let i=0;i < controlloNutente.length; i++){
+      if(numbersArray.includes(controlloNutente[i])){
+         
       }
-      
+   }
+        
+    
+      }
    
-}, 3000);
+, 3000);
 
 
